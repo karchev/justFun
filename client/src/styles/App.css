@@ -1,0 +1,121 @@
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh; /* 브라우저보다 조금 작게 */
+  width: 98vw;  /* 브라우저보다 조금 작게 */
+  background-color: #f0f0f0;
+  margin: 0;
+  overflow: hidden; /* 스크롤바가 생기지 않도록 */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.canvas-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffebcd;
+  border-right: 2px solid #f0f0f0;
+  position: relative;
+}
+
+canvas {
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  width: 100%;
+  height: calc(100% - 50px); /* 툴바 높이만큼 줄임 */
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* 툴바 높이 */
+  margin-top: 10px;
+}
+
+.toolbar button {
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.toolbar input[type="color"] {
+  margin-left: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.messages {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.messages li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffebcd;
+  border-radius: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  outline: none;
+  background-color: #fafafa;
+}
+
+/* 반응형 웹 디자인 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .canvas-container {
+    border-right: none;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  canvas {
+    width: 100%;
+    height: calc(50vh - 50px); /* 툴바 높이만큼 줄임 */
+  }
+
+  .chat-container {
+    height: 50vh;
+  }
+}
